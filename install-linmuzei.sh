@@ -39,7 +39,7 @@ case $y_or_n in
   [nN][oO]|[nN])      echo "Exiting." ; exit ;;
 esac
 
-[ $({ crontab -l; echo "0 * * * * DISPLAY=:0 muzeibash"; } | crontab -) ]
+[ $({ crontab -l; echo "0 * * * * DISPLAY=:0 linmuzei"; } | crontab -) ]
 
 sudo bash << EOF
   cp ./linmuzei.sh /usr/bin/linmuzei

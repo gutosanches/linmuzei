@@ -127,6 +127,10 @@ function setWallpaperLinux(){
   then
     echo "Gnome-settings-daemons detected, setting wallpaper with gsettings..."
     gsettings set org.gnome.desktop.background picture-uri file://$muzeiDir/Wallpaper/$imageFile
+  elif [ "$(pidof cinnamon-settings-daemon)" ]
+  then
+     echo "Cinnamon-settings-daemons detected, setting wallpaper with gsettings..."
+     gsettings set org.cinnamon.desktop.background picture-uri file://$muzeiDir/Wallpaper/$imageFile
   else
     if [ -f ~/.xinitrc ]
     then
