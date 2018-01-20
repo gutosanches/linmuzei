@@ -123,7 +123,7 @@ function nitrogen_xinitSet(){
 
 ######Set the wallpaper######
 function setWallpaperLinux(){
-  if [ "$(pidof gnome-settings-daemon)" ]
+	if [ "$(pidof gnome-settings-daemon)" ] || [ "$(which gsettings)" ]
   then
     echo "Gnome-settings-daemons detected, setting wallpaper with gsettings..."
     gsettings set org.gnome.desktop.background picture-uri file://$muzeiDir/Wallpaper/$imageFile
